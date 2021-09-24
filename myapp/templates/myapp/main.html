@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How Much Have You Drink?</title>
+    <style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+</head>
+<body>
+<p>This is how much you have drunk the milo</p>
+<table style="width:100%">
+  <tr>
+    <th>{{marco.drinker}}</th>
+    <th>{{antor.drinker}}</th>
+  </tr>
+  <tr>
+    <td>{{marco.drinks_num}}</td>
+    <td>{{antor.drinks_num}}</td>
+  </tr>
+    <tr>
+        <td>last drank at {{marco.add_date}}</td>
+        <td>last drank at {{antor.add_date}}</td>
+    </tr>
+  <tr>
+    <td>
+        <form action = "/drinkmilo">
+        <button id="drink button1" class="btn">DRINK</button>
+    </form>
+
+    </td>
+    <td><form action = "/drinkmilo2">
+        <button id="drink button2" class="btn">DRINK</button>
+    </form></td>
+  </tr>
+  <tr>
+      <td>
+          <form action = "/reset">
+        <button id="drink button1" class="btn">reset</button>
+    </form>
+      </td>
+      <td>
+          <form action = "/reset2">
+        <button id="drink button1" class="btn">reset</button>
+    </form>
+      </td>
+  </tr>
+</table>
+
+</body>
+</html>
