@@ -10,11 +10,12 @@ table, th, td {
 </style>
 </head>
 <body>
+{%if user.is_authenticated%}
 <p>This is how much you have drunk the milo</p>
 <table style="width:100%">
   <tr>
     <th>{{marco.drinker}}</th>
-    <th>{{antor.drinker}}</th>
+    <th>{{user.get_username}}</th>
   </tr>
   <tr>
     <td>{{marco.drinks_num}}</td>
@@ -24,30 +25,21 @@ table, th, td {
         <td>last drank at {{marco.add_date}}</td>
         <td>last drank at {{antor.add_date}}</td>
     </tr>
-  <tr>
-    <td>
+
+
+</table>
+        {%if user.get_username == "marcohendra"%}
         <form action = "/drinkmilo">
         <button id="drink button1" class="btn">DRINK</button>
-    </form>
-
-    </td>
-    <td><form action = "/drinkmilo2">
+        </form>
+        {%else%}
+        <form action = "/drinkmilo2">
         <button id="drink button2" class="btn">DRINK</button>
-    </form></td>
-  </tr>
-  <tr>
-      <td>
-          <form action = "/reset">
-        <button id="drink button1" class="btn">reset</button>
-    </form>
-      </td>
-      <td>
-          <form action = "/reset2">
-        <button id="drink button1" class="btn">reset</button>
-    </form>
-      </td>
-  </tr>
-</table>
+        </form>
+        {%endif%}
 
+{%else%}
+<p> <a href = "{%url 'registration'%}" class = "registration">not registered yet please register here</a></p>
+{%endif%}
 </body>
 </html>
